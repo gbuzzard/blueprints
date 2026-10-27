@@ -51,11 +51,41 @@ example pages.
 
 ## Adding a kind
 
-1. Copy the folder of the existing kind that is closest to the new one.
-2. Answer the twelve questions in its `KIND.md`.  Keep a rule in the kind
+A new kind has an **owner**: a person who has done this type of work
+many times and who answers the questions about it.
+
+1. Write a short proposal for the kind, and agree on it with the owner
+   before writing the kind file.  The proposal names:
+   - the components, and the reader's question each one answers;
+   - the core statements;
+   - the three choices on which the existing kinds differ: fixed or menu
+     components (question 2), blueprints settled together or one at a
+     time (question 6), and pages that change with the work or a fixed
+     record (question 7).
+2. Ask the owner for weak core statements from real cases, such as
+   proposals or papers they have reviewed.  Write the kind's tests and
+   confusions (question 3) from these cases.
+3. Copy the folder of the existing kind that is closest to the new one.
+4. Answer the twelve questions in its `KIND.md`.  Keep a rule in the kind
    file only when it differs from `BASE.md` or adds to it.
-3. Write a made-up example: a front page and one or two blueprints.
-4. Try the kind on a real piece of work, with its author as the person,
+5. Write a made-up example: a front page and one or two blueprints.
+6. Run the kind's interview on the made-up example, with Claude asking
+   the questions and the owner answering them.  Revise the kind file
+   where the run shows a rule that is missing or unclear.
+7. Try the kind on a real piece of work, with its author as the person,
    before anyone else uses it.  A real case shows what the kind file
    lacks.
-5. Add the kind to the list in `SKILL.md` and to the table in `README.md`.
+8. Add the kind to the list in `SKILL.md` and to the table in `README.md`.
+
+## Rules for changing the kit
+
+- **Change `BASE.md` only for a rule that every kind needs.**  A rule
+  that only one kind needs stays in that kind's file.  Before a change to
+  `BASE.md` is committed, check it against each existing kind file and
+  its example, and record it, with its date and its reason, in
+  `docs/rule_sort.md`.
+- **Cite outside rules from their source.**  Outside rules, such as a
+  funding agency's required sections and page limits, change from year
+  to year.  In section 11, name the source document and its date, and
+  tell Claude to ask the person for the current version instead of
+  writing the rules from memory.

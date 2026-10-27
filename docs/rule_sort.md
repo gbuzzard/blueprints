@@ -68,3 +68,10 @@ The software kind behaves as v5 does, except for six changes:
 | How to write math (MathML) | Proposed for v6 | Yes | `BASE.md` | None. |
 | Templates | Front page, blueprint, decisions, CLAUDE.md | The same four, written for experiments | `templates/` holds generic ones; software replaces the front page; experiment replaces the front page and the blueprint page | The v5 blueprint template gains the MathML rules and example. |
 | Examples | Image denoiser: front page and Theory | CT denoisers: front page, Motivation, and Plan | `kinds/<kind>/example/` | The Theory page's equations are in MathML. |
+
+## Changes to `BASE.md` since the first version
+
+Each change is listed with its date, the change, and its reason, as
+`KINDS.md` says under "Rules for changing the kit."
+
+None yet.

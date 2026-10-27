@@ -56,11 +56,11 @@ few questions, then opens the front page of your own blueprints.
 | `README.md` | This page. |
 | `SKILL.md` | Where Claude starts: the list of kinds and how to choose one. |
 | `BASE.md` | The method and the rules that every kind follows. |
-| `KINDS.md` | How a kind is defined, and how to add one. |
+| `KINDS.md` | How a kind is defined, how to add one, and the rules for changing the kit. |
 | `kinds/software/` | The software kind: `KIND.md`, a front page template, and an example (a made-up image denoiser). |
 | `kinds/experiment/` | The experiment kind: `KIND.md`, its templates, and an example (a made-up comparison of two CT denoisers). |
 | `templates/` | The templates every kind uses unless it has its own: front page, blueprint page, `decisions.md`, and `CLAUDE.md`, the coding and comment style Claude follows if the work needs code. |
-| `docs/rule_sort.md` | Where each rule of the two earlier kits went in this kit. |
+| `docs/rule_sort.md` | Where each rule of the two earlier kits went in this kit, and each later change to `BASE.md`. |
 
 ## Read it before you use it
 
