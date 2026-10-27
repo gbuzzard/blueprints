@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blueprints: TV denoiser versus Gaussian denoiser (example), Plan</title>
+<style>
+:root {
+  --bg: #fbfaf7; --surface: #ffffff; --fg: #1f2328; --muted: #5f6670; --line: #d9d7d0;
+  --accent: #2b6cb0; --done: #2f855a; --todo: #b7791f;
+  --fill-a: #e3eefb; --fill-b: #dff4f7; --fill-c: #fdf3df;
+  --sans: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #15171b; --surface: #1d2025; --fg: #e6e4df; --muted: #a0a6ae; --line: #343a42;
+  --accent: #7fb0ea; --done: #7cc99a; --todo: #e2b05a;
+  --fill-a: #1b2d44; --fill-b: #0f3238; --fill-c: #3a2f17; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #15171b; --surface: #1d2025; --fg: #e6e4df; --muted: #a0a6ae; --line: #343a42;
+  --accent: #7fb0ea; --done: #7cc99a; --todo: #e2b05a;
+  --fill-a: #1b2d44; --fill-b: #0f3238; --fill-c: #3a2f17; color-scheme: dark }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 16px; line-height: 1.55; }
+.wrap { max-width: 900px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 64px; }
+.crumb { font-size: 13px; color: var(--muted); margin: 0 0 14px; }
+.crumb a { color: var(--accent); text-decoration: none; }
+h1 { font-size: 30px; font-weight: 700; margin: 0 0 4px; }
+h2 { font-size: 22px; font-weight: 700; margin: 40px 0 10px; }
+p { max-width: 70ch; margin: 0 0 10px; }
+.lead { color: var(--muted); font-size: 17px; }
+code { font-family: var(--mono); font-size: 0.9em; }
+ul, ol { max-width: 75ch; } li { margin: 4px 0; }
+pre, .eq { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 10px 14px; font-family: var(--mono); font-size: 14px; overflow-x: auto; margin: 10px 0; }
+.tablewrap { overflow-x: auto; }
+table { border-collapse: collapse; margin: 12px 0; font-size: 15px; }
+th, td { border-bottom: 1px solid var(--line); padding: 6px 14px 6px 0; text-align: left; vertical-align: top; }
+th { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+figure { margin: 14px 0; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 12px; overflow-x: auto; }
+figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; }
+svg text { font-family: var(--sans); fill: var(--fg); font-size: 14px; }
+svg .box-a { fill: var(--fill-a); stroke: var(--accent); }
+svg .box-b { fill: var(--fill-b); stroke: var(--muted); }
+svg .box-c { fill: var(--fill-c); stroke: var(--todo); }
+svg .arrow { stroke: var(--muted); fill: none; stroke-width: 1.5; }
+.chip { display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 1px 8px; border-radius: 3px; border: 1px solid; vertical-align: middle; }
+.chip.done { color: var(--done); border-color: var(--done); }
+.chip.todo { color: var(--todo); border-color: var(--todo); }
+.ask { border-left: 4px solid var(--todo); background: var(--surface); padding: 10px 16px; max-width: 75ch; margin: 16px 0; }
+ol.questions { list-style: none; padding-left: 0; }
+ol.questions li { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start; padding: 8px 0; border-bottom: 1px solid var(--line); }
+ol.questions input { width: 18px; height: 18px; margin-top: 4px; accent-color: var(--done); }
+ol.questions li.decided { color: var(--muted); }
+math { font-family: "STIX Two Math", "Latin Modern Math", "Cambria Math", math; font-size: 1.05em; }
+.eq math { font-size: 18px; }
+mtd { padding: 0.25em 0.3em; }
+mtd.l { text-align: left; }
+mtd.r { text-align: right; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<p class="crumb"><a href="index.html">Blueprints: TV denoiser versus Gaussian denoiser (example)</a> &rsaquo; Plan</p>
+<h1>3. Plan</h1>
+<p class="lead">How the runs will answer the Goal's question, and at what cost. A made-up example; the numbers are illustrative.</p>
+
+<h2>1. Runs</h2>
+<p>The data are three scans of each of two phantoms, all at the same dose and scanner settings: the Gammex MMC phantom, whose inserts have known CT numbers, and the Lungman chest phantom, whose lungs have a vessel tree closer to patient texture. Scans 1 and 2 of each phantom are scored. Scan 3 of the Gammex phantom is used only to choose TV's weight.</p>
+<ul>
+  <li>Baseline: the Gaussian denoiser at its default width.</li>
+  <li>New method: the TV denoiser at the weight chosen by the search (section 6).</li>
+  <li>Held fixed: everything else in the reconstruction, including the forward model, the number of iterations, and the material decomposition.</li>
+  <li>Scored slices: 10 slices of each phantom, at least 5 mm apart, listed before the runs: through the inserts of the Gammex phantom, and through the nodules and vessels of the Lungman phantom.</li>
+</ul>
+
+<h2>2. Fair comparison</h2>
+<p>Both methods reconstruct the same scans, so every comparison is paired by slice. TV's weight is set so that TV's edge width equals the Gaussian denoiser's at the edge of the muscle insert in Gammex scan 3 (Q2). The same weight is used on every scan of both phantoms, because a default has one setting (Q3). The Gaussian denoiser stays at its default width, the setting in use.</p>
+
+<h2>3. Metrics</h2>
+<ul>
+  <li><b>Noise</b> (HU): <math><mi>&#963;</mi></math>, the standard deviation of the difference between the scan 1 and scan 2 images <math><msub><mi>x</mi><mn>1</mn></msub></math> and <math><msub><mi>x</mi><mn>2</mn></msub></math> over the pixels <math><mi>i</mi></math> of a fixed region <math><mi>R</mi></math>, divided by <math><msqrt><mn>2</mn></msqrt></math> because the difference holds the noise of two scans:
+<div class="eq"><math display="block"><mi>&#963;</mi><mo>=</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac><munder><mi>std</mi><mrow><mi>i</mi><mo>&#8712;</mo><mi>R</mi></mrow></munder><mrow><mo>[</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo><mo>&#8722;</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">(</mo><mi>i</mi><mo stretchy="false">)</mo><mo>]</mo></mrow></math></div>
+The regions are the Gammex background between inserts, and the Lungman lung and mediastinum. The difference removes the phantom's structure, so no true image is needed.</li>
+  <li><b>Edge width</b> (mm): the distance over which the edge profile, averaged around an insert or a nodule, rises from 10% to 90% of its step.</li>
+  <li><b>Muscle contrast</b> (HU): the mean CT number in the muscle insert minus the mean in the background around it.</li>
+  <li><b>CT number error</b> (HU): the mean CT number in each Gammex insert minus its known value.</li>
+  <li><b>Noise texture</b> (mm<sup>&minus;1</sup>): the mean frequency of the noise power spectrum of the difference image, in the noise regions.</li>
+  <li><b>Leakage</b> (mg/mL): the mean of the water map in a ring around each iodine insert, minus its mean in the background.</li>
+</ul>
+
+<h2>4. Run checks</h2>
+<ul>
+  <li>The relative change of the image between the last two iterations is below <math><msup><mn>10</mn><mrow><mo>&#8722;</mo><mn>4</mn></mrow></msup></math>.</li>
+  <li>The scored slices are viewed in one fixed display window for streaks, rings, and flat patches with sharp borders (the staircase artifact of TV).</li>
+  <li>The first Gaussian run reproduces the lab's earlier image of the same scan.</li>
+</ul>
+
+<h2>5. Repeats</h2>
+<p>One scored pair of scans per phantom. Each slice gives one paired comparison, so each scatter plot has 20 points. From earlier Gaussian runs, the noise varies by about 3% from slice to slice, which is smaller than the gains discussed in the Motivation.</p>
+
+<h2>6. Search</h2>
+<p>The search chooses TV's one setting, its weight, on Gammex scan 3.</p>
+<ul>
+  <li>First stage: 5 weights, each twice the one before.</li>
+  <li>Pruning rule: keep the two neighboring weights whose edge widths lie on either side of the Gaussian denoiser's edge width; drop the rest. If no pair does, add one weight beyond the end of the range.</li>
+  <li>Next stage: the weight halfway between the two kept weights on a logarithmic scale.</li>
+  <li>Limits: 4 stages and 8 TV runs.</li>
+  <li>End: when TV's edge width is within 0.05 mm of the Gaussian denoiser's, or at a limit. The weight with the closest edge width is used.</li>
+</ul>
+
+<h2>7. Budget</h2>
+<p>A reconstruction takes about 1 minute with the Gaussian denoiser and about 80 minutes with TV (Q4). The runs are 5 Gaussian runs (4 scored, and 1 on Gammex scan 3 to give the edge width to match) and at most 13 TV runs (8 search, 4 scored, 1 pilot): about 17 GPU hours, within one week. Stopping rule: stop and report if TV fails the convergence check at the chosen weight, or if the search ends at a limit with no weight on either side of the Gaussian denoiser's edge width.</p>
+
+<h2>8. Pilot runs</h2>
+<p>One TV run on Gammex scan 3 at the first weight of the search, to measure the time per run and the iterations to converge. It settles Q4.</p>
+<p class="ask">PILOT RESULT: the measured time per TV run and the number of iterations to converge go here, with the date.</p>
+
+<h2>9. Records</h2>
+<p>For each run: the scan, the denoiser and its setting, the code version, the run time, the convergence history, the images of the scored slices, and the scores, saved in the experiment's results folder.</p>
+
+<h2>10. Open questions</h2>
+<ol class="questions">
+  <li><input type="checkbox" id="q4"><label for="q4"><b>Q4. Time per TV run.</b> Is 80 minutes per TV run right? The pilot run (section 8) settles it before the design is settled.</label></li>
+</ol>
+
+<h2>11. Decisions</h2>
+<ol class="questions">
+  <li class="decided"><input type="checkbox" checked disabled><label><span class="chip done">decided 2026-10-24</span> <b>Q1. Data.</b> Scans of the Gammex MMC phantom, for known CT numbers and contrast, and of the Lungman chest phantom, for texture closer to patients. A phantom of constant regions alone was rejected, because TV favors such regions.</label></li>
+  <li class="decided"><input type="checkbox" checked disabled><label><span class="chip done">decided 2026-10-24</span> <b>Q2. Matching edge.</b> TV's weight is set at the edge of the muscle insert, because TV's edge width depends on the edge's contrast and TV widens low-contrast edges most. The edge widths at an iodine insert and at the Lungman nodules are reported.</label></li>
+  <li class="decided"><input type="checkbox" checked disabled><label><span class="chip done">decided 2026-10-24</span> <b>Q3. One weight.</b> One TV weight, chosen on Gammex scan 3, is used for both phantoms, because a default has one setting. The Lungman edge widths are reported beside its noise. A weight chosen for each phantom was rejected.</label></li>
+</ol>
+</div>
+</body>
+</html>

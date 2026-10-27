@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blueprints: TV denoiser versus Gaussian denoiser (example), Motivation</title>
+<style>
+:root {
+  --bg: #fbfaf7; --surface: #ffffff; --fg: #1f2328; --muted: #5f6670; --line: #d9d7d0;
+  --accent: #2b6cb0; --done: #2f855a; --todo: #b7791f;
+  --fill-a: #e3eefb; --fill-b: #dff4f7; --fill-c: #fdf3df;
+  --sans: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #15171b; --surface: #1d2025; --fg: #e6e4df; --muted: #a0a6ae; --line: #343a42;
+  --accent: #7fb0ea; --done: #7cc99a; --todo: #e2b05a;
+  --fill-a: #1b2d44; --fill-b: #0f3238; --fill-c: #3a2f17; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #15171b; --surface: #1d2025; --fg: #e6e4df; --muted: #a0a6ae; --line: #343a42;
+  --accent: #7fb0ea; --done: #7cc99a; --todo: #e2b05a;
+  --fill-a: #1b2d44; --fill-b: #0f3238; --fill-c: #3a2f17; color-scheme: dark }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 16px; line-height: 1.55; }
+.wrap { max-width: 900px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 64px; }
+.crumb { font-size: 13px; color: var(--muted); margin: 0 0 14px; }
+.crumb a { color: var(--accent); text-decoration: none; }
+h1 { font-size: 30px; font-weight: 700; margin: 0 0 4px; }
+h2 { font-size: 22px; font-weight: 700; margin: 40px 0 10px; }
+p { max-width: 70ch; margin: 0 0 10px; }
+.lead { color: var(--muted); font-size: 17px; }
+code { font-family: var(--mono); font-size: 0.9em; }
+ul, ol { max-width: 75ch; } li { margin: 4px 0; }
+pre, .eq { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 10px 14px; font-family: var(--mono); font-size: 14px; overflow-x: auto; margin: 10px 0; }
+.tablewrap { overflow-x: auto; }
+table { border-collapse: collapse; margin: 12px 0; font-size: 15px; }
+th, td { border-bottom: 1px solid var(--line); padding: 6px 14px 6px 0; text-align: left; vertical-align: top; }
+th { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+figure { margin: 14px 0; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 12px; overflow-x: auto; }
+figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; }
+svg text { font-family: var(--sans); fill: var(--fg); font-size: 14px; }
+svg .box-a { fill: var(--fill-a); stroke: var(--accent); }
+svg .box-b { fill: var(--fill-b); stroke: var(--muted); }
+svg .box-c { fill: var(--fill-c); stroke: var(--todo); }
+svg .arrow { stroke: var(--muted); fill: none; stroke-width: 1.5; }
+.chip { display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 1px 8px; border-radius: 3px; border: 1px solid; vertical-align: middle; }
+.chip.done { color: var(--done); border-color: var(--done); }
+.chip.todo { color: var(--todo); border-color: var(--todo); }
+.ask { border-left: 4px solid var(--todo); background: var(--surface); padding: 10px 16px; max-width: 75ch; margin: 16px 0; }
+ol.questions { list-style: none; padding-left: 0; }
+ol.questions li { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start; padding: 8px 0; border-bottom: 1px solid var(--line); }
+ol.questions input { width: 18px; height: 18px; margin-top: 4px; accent-color: var(--done); }
+ol.questions li.decided { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<p class="crumb"><a href="index.html">Blueprints: TV denoiser versus Gaussian denoiser (example)</a> &rsaquo; Motivation</p>
+<h1>2. Motivation</h1>
+<p class="lead">What the lab will do differently depending on the answer. A made-up example; the numbers are illustrative.</p>
+
+<h2>1. Decision</h2>
+<p>The lab decides whether its default denoiser changes from the Gaussian denoiser to TV. The lab's members discuss the results, and the lab director decides.</p>
+
+<h2>2. What is known now</h2>
+<ul>
+  <li>A reconstruction takes about 80 times longer with TV than with the Gaussian denoiser.</li>
+  <li>TV favors images made of regions of constant intensity, so it may gain more on phantoms than on patients.</li>
+  <li>TV's edge width depends on the edge's contrast; the Gaussian denoiser's does not.</li>
+  <li>TV may lower the contrast of low-contrast inserts such as muscle and change the noise texture. Its effect on leakage between material maps is not known.</li>
+</ul>
+
+<h2>3. Outcome table</h2>
+<p>Each possible answer to the Goal's question, and the action it leads to. The quantities that must not get worse are muscle contrast, CT number accuracy, noise texture, and leakage. The rows name judgments, not numeric thresholds, because several quantities trade off against an 80-fold cost, so the lab weighs the results and discusses them. The three answers lead to three different actions, so the Motivation test passes.</p>
+<div class="tablewrap"><table>
+<tr><th>Possible answer</th><th>Action</th></tr>
+<tr><td>TV's noise is much lower at equal edge width on nearly every slice of both phantoms, and no other quantity is worse.</td><td>Discuss changing the default. The gain must be large to justify a reconstruction about 80 times slower.</td></tr>
+<tr><td>TV's noise is lower, but another quantity is worse, or the gain holds on only some slices or only on the Gammex phantom.</td><td>Keep the Gaussian denoiser, and discuss whether a faster TV solver or another TV setting could remove the trade-off.</td></tr>
+<tr><td>TV's noise is not clearly lower, or muscle contrast is clearly worse.</td><td>Keep the Gaussian denoiser, and stop work on TV.</td></tr>
+</table></div>
+
+<h2>4. Open questions</h2>
+<p>None.</p>
+
+<h2>5. Decisions</h2>
+<ol class="questions">
+  <li class="decided"><input type="checkbox" checked disabled><label><span class="chip done">decided 2026-10-24</span> <b>Q1. Decision and question.</b> The decision, whether to change the default, is the Motivation; the Goal is the measured question that informs it. Stating the decision as the Goal was rejected, because the decision rests on a judgment of trade-offs, not on a measurement alone.</label></li>
+  <li class="decided"><input type="checkbox" checked disabled><label><span class="chip done">decided 2026-10-24</span> <b>Q2. Judgment rows.</b> The outcome table names judgments instead of numeric thresholds. A single threshold on the noise reduction was rejected, because it ignores the other quantities.</label></li>
+  <li class="decided"><input type="checkbox" checked disabled><label><span class="chip done">decided 2026-10-24</span> <b>Q3. Quantities that must not get worse.</b> Muscle contrast, CT number accuracy, noise texture, and leakage between material maps.</label></li>
+</ol>
+</div>
+</body>
+</html>
