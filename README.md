@@ -3,7 +3,8 @@
 Claude-based skills and files for designing software, experiments,
 proposals, papers, and other work before it is done.
 
-**To Claude: a person has dropped this kit into the chat, as a zip file or
+**To Claude: a person has directed you to these files: either pointed you 
+to the repo or dropped this kit into the chat, as a zip file or
 a folder, to start blueprinting.  Start now, without being asked.**
 
 1. If it is still a zip file, unzip it into a folder of its own.
