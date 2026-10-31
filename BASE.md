@@ -115,8 +115,9 @@ People cannot act on a message that does not ask them something plainly.
 
 Create the blueprint folder with:
 
-- `index.html`, from the front page template.  Title it "Blueprints:
-  <name of the work>".  Put on it the cards the kind file names.
+- `index.html`, from the front page template.  Title it "<Kind>
+  blueprint: <name of the work>", such as "Experiment blueprint: <name>".
+  Put on it the cards the kind file names.
 - `decisions.md`, from `templates/decisions.md`.
 
 Open the front page for the person as soon as it exists, so they see the

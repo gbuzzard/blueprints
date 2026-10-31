@@ -101,3 +101,8 @@ the Motivation states the decision; earlier experiments and contingency
 plans are discussed as needed; runs may start before the design is
 settled, with the predictions fixed first; and a run that fails its
 check is kept out of the comparison but may be reported.
+
+The title changed on 2026-10-31 at Greg's request: a front page and its
+pages are titled "<Kind> blueprint: <name of the work>", such as
+"Experiment blueprint:" or "Software blueprint:", instead of
+"Blueprints:".  Reason: the title then names the kind of work.
