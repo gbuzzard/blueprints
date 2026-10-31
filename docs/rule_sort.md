@@ -41,7 +41,7 @@ The software kind behaves as v5 does, except for six changes:
 | Propose the components, then ask whether the set is right | Message 5 | No | Software, section 4 | Brackets dropped. |
 | Interview questions 1 to 6; sort the first answer into Goal, Motivation, and Plan | No | Yes | Experiment, section 4 | None. |
 | Goal test, Motivation test, and four confusions | No | Yes | Experiment, section 3 | None. |
-| Own words first, critique in one or two sentences, wording only on request | No | Yes | `BASE.md` Step 3 | Now applies to every kind's core statements. |
+| Own words first, critique in one or two sentences, wording only on request | No | Yes | `BASE.md` Step 3 | Now applies to every kind's core statements.  Since 2026-10-31, Claude also gives its view and proposed wording. |
 | Draft first the item cheapest to change | The User API script | The planned figures | `BASE.md` Step 3; kind files, section 5 | None. |
 | Page rules: only what will be built, the person's terms, the best form, one screen, open questions with checkboxes, the decided chip | Step 3 | Template and Step 5 | `BASE.md` Step 3 | MathML added. |
 | Each missing fact becomes an open question with a recommendation | Implied | Step 4 | `BASE.md` Step 3 | None. |
@@ -74,4 +74,30 @@ The software kind behaves as v5 does, except for six changes:
 Each change is listed with its date, the change, and its reason, as
 `KINDS.md` says under "Rules for changing the kit."
 
-None yet.
+2026-10-31, from the first real use of the experiment kind (Greg's
+experiment "edge, ring, and bias"), with Greg's agreement:
+
+1. Step 3: Claude gives its own view and proposed wording, marked as a
+   proposal, instead of offering wording only when asked.  Reason: Greg
+   found a purely critical interviewer unhelpful.  The blueprints still
+   record only the wording the person accepts.  The software kind has no
+   core statements yet, so its behavior does not change in practice.
+2. Step 5: a blueprint is a design, not a procedure; the work departs
+   from it for good reasons, and each departure is recorded with its
+   reason.  Reason: Greg's view that blueprints, like an architect's, are
+   modified during building, and that the kit should not read as a list
+   of steps to follow to the letter.  This states the intent of the
+   existing deviation rule; the software kind's living pages already
+   change with the work.
+3. Step 5: the person may approve a kind of change in advance, such as
+   reruns, and that approval is recorded in `decisions.md`.  Reason: Greg
+   approved reruns in advance, and the kit had no place to record such an
+   approval.  It applies only to kinds whose blueprints are a fixed
+   record, so the software kind does not change.
+
+The experiment kind changed on the same date: the Goal is what the
+experiment will measure or determine, as a statement or a question, and
+the Motivation states the decision; earlier experiments and contingency
+plans are discussed as needed; runs may start before the design is
+settled, with the predictions fixed first; and a run that fails its
+check is kept out of the comparison but may be reported.

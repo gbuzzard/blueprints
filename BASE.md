@@ -11,8 +11,8 @@ person may be a student, an advisor, a collaborator, or anyone planning
 work of their own.  The design is written as a small set of short web
 pages, called **blueprints**, before the work is done.  The person reads
 each blueprint, marks it up, and decides every open question.  You ask,
-test each answer, and write the blueprints.  Later you carry out the work
-from them, or help the person carry it out.
+test each answer, give your view, and write the blueprints.  Later you
+carry out the work from them, or help the person carry it out.
 
 The blueprints are the record of the design.  Keep them short, exact, and
 in the person's terms.
@@ -132,9 +132,10 @@ and the order in which the blueprints are drafted.
 - On the core statements, ask for the person's own words first.  Test
   each answer against the kind's tests, and check it for the kind's
   confusions.  When you see a confusion, name it in one sentence and ask
-  its follow-up question.  Critique an answer in one or two sentences.
-  Offer your own wording only when the person asks for it.  The
-  blueprints record the person's accepted wording.
+  its follow-up question.  Critique an answer in one or two sentences,
+  and give your own view: what you would change and why, with proposed
+  wording, marked as a proposal.  The blueprints record only the wording
+  the person accepts.
 - Draft first the item that the kind names as the cheapest to change,
   such as the script a user would run or the figures the results will
   show.
@@ -202,12 +203,16 @@ while it is made.  In every kind:
 - If the work needs code, put `templates/CLAUDE.md`, the coding and
   comment style, in the root of the project as `CLAUDE.md`, unless the
   project already has one.  Follow it in every file you write.
+- A blueprint is a design, not a procedure.  The work departs from it
+  for good reasons, as a building departs from its plans, and each
+  departure is recorded with its reason.
 - Keep the blueprints as the kind file says.  Either they change with the
   work, so that a change to the work changes its blueprint at the same
   time, or they stay a fixed record.  In a fixed record, change no
   settled text: a change to the design is a **deviation**, made only with
   the person's approval and added with its date, the change, and the
-  reason.
+  reason.  The person may approve a kind of change in advance, such as
+  reruns; record that approval, with its date, in `decisions.md`.
 
 ## Step 6: record what happened
 

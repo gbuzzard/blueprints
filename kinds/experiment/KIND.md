@@ -7,8 +7,8 @@ shares with every kind are in `BASE.md`, and the rules below are its own.
 
 ## 1. Product
 
-Measured results and a conclusion: the answer to the experiment's
-question and the action it leads to.
+Measured results and a conclusion: the experiment's result and the
+action it leads to.
 
 ## 2. Components
 
@@ -17,11 +17,11 @@ answers one question a reader asks.
 
 | Blueprint | The question it answers |
 |---|---|
-| 1. Goal | What question does the experiment answer? |
-| 2. Motivation | What will we do differently depending on the answer? |
-| 3. Plan | How will the runs answer the question, and at what cost? |
+| 1. Goal | What will the experiment measure or determine? |
+| 2. Motivation | What will we do differently depending on the result? |
+| 3. Plan | How will the runs measure it, and at what cost? |
 | 4. Results | What did we predict, and what did we measure? |
-| 5. Conclusion | What is the answer, and what do we do next? |
+| 5. Conclusion | What is the result, and what do we do next? |
 
 The Goal, the Motivation, the Plan, and the Planned section of the
 Results are the **design**.  The Measured section of the Results and the
@@ -29,9 +29,12 @@ Conclusion are written after the runs.
 
 Two definitions keep the Goal and the Motivation apart:
 
-- The **Goal** is the question the experiment answers.
-- The **Motivation** is the decision or next step that the answer
-  changes.
+- The **Goal** is what the experiment will measure or determine.  It
+  may be written as a statement, such as "Measure how much ...", or as a
+  question.
+- The **Motivation** is the decision or next step that the result
+  changes.  Write it as a statement of the decision, such as "Decide
+  whether ...", not as a question.
 
 Each blueprint has the sections below, in this order, followed by Open
 questions and Decisions.  A section may be one line.  Write "None." in a
@@ -39,16 +42,16 @@ section that does not apply.
 
 | Blueprint | Sections |
 |---|---|
-| Goal | Question.  Quantity, data, and baseline: the quantity measured, any other quantities that must not get worse, the data, and the method or setting the experiment compares against.  Out of scope. |
+| Goal | Statement.  Quantity, data, and baseline: the quantity measured, any other quantities that must not get worse, the data, and the method or setting the experiment compares against.  Out of scope. |
 | Motivation | Decision: what will be decided, and who decides.  What is known now.  Outcome table. |
 | Plan | Runs: the baseline run, what is varied and over what values, and what is held fixed.  Fair comparison: what must match for two runs to be compared, how it is matched, and how each method's settings are chosen (see section 6).  Metrics: each score, defined.  Run checks: how each run is shown to have worked before it is scored.  Repeats: how many, and the run-to-run variation expected.  Search: the stages, the pruning rule, and the limits (see section 6).  Budget: compute time, calendar time, and the stopping rule.  Pilot runs: each with the open question it settles.  Records: what is saved for each run.  Deviations: added only after the design is settled. |
 | Results | Planned: each figure and table, with axes and units, the predicted outcome and the reason for it, and how each row of the outcome table would appear in it.  Measured: added after the runs. |
-| Conclusion | Answer: one sentence.  Outcome: the row of the outcome table that occurred, and its action.  Surprises.  Undetermined.  Next experiment. |
+| Conclusion | Result: one sentence.  Outcome: the row of the outcome table that occurred, and its action.  Surprises.  Undetermined.  Next experiment. |
 
 The **outcome table** on the Motivation blueprint has one row for each
-possible answer to the Goal's question, and two columns: the answer, and
-the action it leads to.  The rows cover every possible answer, including
-"no difference."  When the experiment scores several images or data
+possible result of the Goal, and two columns: the result, and the action
+it leads to.  The rows cover every possible result, including "no
+difference."  When the experiment scores several images or data
 sets, or several quantities, include rows for results that differ across
 the data and for a gain in the main quantity with a loss in another; one
 row may cover both.  A row may name a judgment instead of a number, such
@@ -68,14 +71,14 @@ results.  The templates are `kinds/experiment/templates/index.html` and
 
 Apply these two tests to every Goal and Motivation statement.
 
-- **Goal test.**  The question names the quantity measured, the data,
-  and, for a comparison, the baseline.  Its answer is a number, a curve,
-  a comparison, or a yes or no, so a third person could tell after the
-  runs whether the question was answered.  The data are like the data
+- **Goal test.**  The Goal names the quantity measured, the data, and,
+  for a comparison, the baseline.  Its result is a number, a curve, a
+  comparison, or a yes or no, so a third person could tell after the
+  runs whether the Goal was met.  The data are like the data
   the decision applies to, because a method can score well on test data
   that favor it and poorly on the data it will be used on.
 - **Motivation test.**  At least two rows of the outcome table lead to
-  different actions.  If every answer leads to the same action, the
+  different actions.  If every result leads to the same action, the
   experiment gives no actionable information.  An exploratory experiment
   passes when its outcome changes what the next experiment studies.
 
@@ -83,10 +86,10 @@ Four confusions are common.
 
 | Confusion | Example | Follow-up question |
 |---|---|---|
-| An activity stated as the Goal | "Run a learned denoiser in the reconstruction loop." | "That is a step of the plan.  What would that step tell you?" |
+| A step of the plan stated as the Goal | "Run a learned denoiser in the reconstruction loop." | "That is a step of the plan.  What would that step measure?" |
 | A broad aim stated as the Goal | "Improve image quality." | "No single experiment can show that.  What part of it can this experiment measure?" |
-| The Goal restated as the Motivation | "To find out whether the noise goes down." | "That restates the question.  What would you do with the answer?" |
-| The field's importance stated as the Motivation | "Lower dose matters for patients." | "That says why the field matters.  What decision does this answer change?" |
+| The Goal restated as the Motivation | "To find out whether the noise goes down." | "That restates the Goal.  What would you do with the result?" |
+| The field's importance stated as the Motivation | "Lower dose matters for patients." | "That says why the field matters.  What decision does this result change?" |
 
 ## 4. Interview
 
@@ -112,22 +115,25 @@ Motivation, and Plan, in the person's words, and show the sort as a short
 list.  Say which of the three is missing.  Then ask these questions, one
 per message:
 
-1. What question will the experiment answer?
-2. Suppose you had the answer today.  What would you do differently
+1. What will the experiment measure or determine?
+2. Suppose you had the result today.  What would you do differently
    because of it?
-3. What are the possible answers, and what would you do after each one?
-4. What figure or table would show the answer?
+3. What are the possible results, and what would you do after each one?
+4. What figure or table would show the result?
 5. What do you expect it to show, and why?
 6. What result would count as clearly better and as clearly worse, in
    numbers if you can?
 
 The core statements are the Goal and the Motivation.  After each answer
-to questions 1 to 3, apply the tests and check for the four confusions.
-Ask questions 1 to 3 again, reworded, until both tests pass.  If the
+to questions 1 to 3, apply the tests and check for the four confusions,
+and give your view and proposed wording as `BASE.md` Step 3 says.  Ask
+questions 1 to 3 again, reworded, until both tests pass.  Discuss earlier
+experiments as they relate to this one, and check any value the design
+takes from an earlier run against that run's record.  If the
 Motivation test fails, say:
 
-> Every answer leads to the same next step, so the experiment would not
-> change what you do.  Shall we change the question, or is there a
+> Every result leads to the same next step, so the experiment would not
+> change what you do.  Shall we change the Goal, or is there a
 > decision I missed?
 
 Then write the Goal and Motivation blueprints and the Planned section of
@@ -157,7 +163,8 @@ run.
 
 **Draft the Plan** from what you read and the answers so far.  Draft
 each section yourself.  Define each metric in words, and also by an
-equation in MathML when an equation states it more exactly.
+equation in MathML when an equation states it more exactly.  Discuss
+contingency plans with the person as needed.
 
 **Settings.**  Choose each method's settings the way they would be chosen
 in use, on data not used for scoring.  A comparison is unfair if the new
@@ -189,9 +196,9 @@ the best setting with the baseline.
 
 **Return to an earlier blueprint** when one of these tests fails:
 
-- The Motivation test fails: every possible answer leads to the same
+- The Motivation test fails: every possible result leads to the same
   action.  Change the Goal, or drop the experiment.
-- The Plan cannot answer the Goal within the budget.  Narrow the Goal,
+- The Plan cannot meet the Goal within the budget.  Narrow the Goal,
   or raise the budget if the Motivation justifies the cost.
 - The predicted difference is smaller than the run-to-run variation, so
   the planned figures cannot tell the outcomes apart.  Change the Plan,
@@ -200,7 +207,11 @@ the best setting with the baseline.
 
 **Pilot runs.**  Make a pilot run only to settle an open question that
 the Pilot runs section names.  Ask before each one, and record its
-result there.  Make no other runs before the design is settled.
+result there.  Make no other runs before the design is settled, unless
+the person asks to start them early.  Then write on the front page what
+is not yet settled, and fix the predictions, in the Planned section of
+the Results or in the code that computes them, before any measurement is
+read.
 
 **Settle.**  When the open questions on the design are decided, and after
 the reviewer question of `BASE.md` Step 4, ask:
@@ -222,7 +233,9 @@ Deviations section.
 2. Reproduce the baseline result first.  If it does not match the
    earlier result, stop and tell the person.
 3. Check each run with the Plan's run checks before you score it.  A run
-   that fails its check is recorded, not scored.
+   that fails its check is recorded, labeled, and kept out of the
+   comparison.  Its scores may be reported to show the size of the
+   failure.
 4. Record each run as the Records section says.
 5. Mark the Results card **running**.
 
@@ -255,11 +268,11 @@ this Conclusion.
 
 ## 10. Critique questions
 
-- Does the Plan answer the Goal?
+- Does the Plan measure what the Goal names?
 - Can any outcome change the decision?
 - What would make the comparison unfair?
 - Is the predicted difference larger than the run-to-run variation?
-- Is there a cheaper experiment that answers the same question?
+- Is there a cheaper experiment that meets the same Goal?
 
 ## 11. Outside rules
 
@@ -273,7 +286,7 @@ Motivation cites this experiment's Conclusion.
 
 ## Other rules of this kind
 
-- Propose the smallest experiment that answers the Goal.  Add no run,
+- Propose the smallest experiment that meets the Goal.  Add no run,
   setting, or metric that the Goal does not need.
 - Report measurements on the Results blueprint.  Let the person interpret
   them; the Conclusion records their interpretation.
