@@ -25,7 +25,7 @@ Write "None." in a section that does not apply.
 3. **Tests and confusions.**  Which statements are the core statements,
    what test must each pass, and which confusions are common, each with
    a follow-up question?
-4. **Interview.**  The exact words of Messages 1, 3, and 4 of `BASE.md`
+4. **Interview.**  The exact words of the opening message of `BASE.md`
    Step 1, any messages the kind adds, and the questions that draw out
    the core statements.
 5. **First draft.**  Which item is drafted first, because it is the

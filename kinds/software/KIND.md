@@ -1,7 +1,7 @@
 # Kind: software
 
 The design of a software project, written before any code.  This kind is
-the Blueprinting starter kit, version 5 (C. A. Bouman), on the shared
+the Blueprinting starter kit, version 6 (C. A. Bouman), on the shared
 base: the rules it shares with every kind are in `BASE.md`, and the rules
 below are its own.
 
@@ -52,32 +52,26 @@ None in this version.
 
 ## 4. Interview
 
-**Message 1**, after showing the example:
+**Opening message**, after showing the example:
 
-> This is the blueprinting kit.  It writes the design of your software as
-> a few short web pages, called blueprints, before any code is written.
-> Above is an example front page for a made-up project.
-> Would you like me to start blueprints for your project?
+> This kit writes the design of your software as a few short web pages,
+> called blueprints, before any code is written.  Above is an example
+> front page for a made-up project.
+> What is the project?  Are there particular papers I should read or
+> software I should review?
 
-**Message 3.**
+That is the only interview question.
 
-> What is the project?  One or two sentences are enough.
+When the person answers, read what they pointed you to.  Then, without
+asking, choose the components yourself: the core ones that apply, any
+core one that is not needed with the reason in a few words, and the
+optional ones this project needs.  Set up the blueprint folder (Step 2 of
+`BASE.md`), open the front page, and say where the folder is.  Then ask:
 
-**Message 4.**
+> Are these the right components, or would you like me to add or delete
+> some?
 
-> What should I read first: papers, code, data, or notes?  Tell me where
-> they are, or say "nothing".
-
-**Message 5.**  Look at what they pointed you to, then propose the
-components yourself.  Do not show them a menu to choose from.  List the
-core components that apply, any core one that is not needed with the
-reason in a few words, and the optional ones this project needs, one
-line each.  Then say:
-
-> Is this the right set of blueprints?
-
-Then set up the blueprint folder (Step 2 of `BASE.md`), open the front
-page, and ask the person for input on the first component.
+Adjust the front page as they say, then write the first blueprint.
 
 If research code exists, ask before running it.  Its outputs on fixed
 inputs become the baselines the new code must match.
@@ -97,11 +91,9 @@ first.  It is the cheapest thing to change.
 Write the blueprints in order, one at a time.  Create each page from the
 blueprint template when you start it, link it from the front page, and
 mark it **for review** when the draft is ready.  Then show it, say what
-to look at, and ask:
-
-> Shall I go through the open questions with you now?
-
-Do not start the next blueprint until this one is **settled**.
+to look at, and list the open questions with your recommendations, so
+that the person can answer them all in one reply.  Do not start the next
+blueprint until this one is **settled**.
 
 ## 7. After settling
 

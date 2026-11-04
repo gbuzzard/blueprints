@@ -93,52 +93,48 @@ Four confusions are common.
 
 ## 4. Interview
 
-**Message 1**, after showing the example:
+**Opening message**, after showing the example:
 
-> This is the blueprinting kit.  It writes the design of your experiment
-> as five short web pages, called blueprints, before any run: Goal,
-> Motivation, Plan, Results, and Conclusion.  Above is an example front
-> page for a made-up experiment.
-> Would you like me to start blueprints for your experiment?
+> This kit writes the design of your experiment as five short web pages,
+> called blueprints, before any run: Goal, Motivation, Plan, Results, and
+> Conclusion.  Above is an example front page for a made-up experiment.
+> What experiment do you want to do?  What should I read first: papers,
+> code, data, earlier results, or notes?
 
-**Message 3.**
-
-> What experiment do you want to do?  One or two sentences are enough.
-
-**Message 4.**
-
-> What should I read first: papers, code, data, earlier results, or
-> notes?  Tell me where they are, or say "nothing".
-
-After the front page is open, sort the answer to Message 3 into Goal,
-Motivation, and Plan, in the person's words, and show the sort as a short
-list.  Say which of the three is missing.  Then ask these questions, one
-per message:
+After the front page is open, sort the answer into Goal, Motivation, and
+Plan, in the person's words, and show the sort as a short list.  Say
+which of the three is missing.  Then ask questions 1 to 3 together, in
+one message:
 
 1. What will the experiment measure or determine?
 2. Suppose you had the result today.  What would you do differently
    because of it?
 3. What are the possible results, and what would you do after each one?
-4. What figure or table would show the result?
-5. What do you expect it to show, and why?
-6. What result would count as clearly better and as clearly worse, in
-   numbers if you can?
 
-The core statements are the Goal and the Motivation.  After each answer
-to questions 1 to 3, apply the tests and check for the four confusions,
-and give your view and proposed wording as `BASE.md` Step 3 says.  Ask
-questions 1 to 3 again, reworded, until both tests pass.  Discuss earlier
-experiments as they relate to this one, and check any value the design
-takes from an earlier run against that run's record.  If the
-Motivation test fails, say:
+The core statements are the Goal and the Motivation.  After the answers,
+apply the tests and check for the four confusions, and give your view
+and proposed wording as `BASE.md` Step 3 says.  Ask again, reworded,
+only about a statement that fails its test, until both tests pass.
+Discuss earlier experiments as they relate to this one, and check any
+value the design takes from an earlier run against that run's record.
+If the Motivation test fails, say:
 
 > Every result leads to the same next step, so the experiment would not
 > change what you do.  Shall we change the Goal, or is there a
 > decision I missed?
 
+Answer questions 4 to 6 yourself, from what you read and the answers so
+far, and put each answer on the Results blueprint as an open question
+with your recommendation:
+
+4. What figure or table would show the result?
+5. What do you expect it to show, and why?
+6. What result would count as clearly better and as clearly worse, in
+   numbers if you can?
+
 Then write the Goal and Motivation blueprints and the Planned section of
-the Results from the answers.  Build the outcome table from the answers
-to questions 3 and 6.
+the Results.  Build the outcome table from the answers to question 3 and
+from your answer to question 6.
 
 ## 5. First draft
 
@@ -213,8 +209,9 @@ is not yet settled, and fix the predictions, in the Planned section of
 the Results or in the code that computes them, before any measurement is
 read.
 
-**Settle.**  When the open questions on the design are decided, and after
-the reviewer question of `BASE.md` Step 4, ask:
+**Settle.**  When the open questions on the design are decided,
+including the reviewer question of `BASE.md` Step 4, ask the person
+first, because settling fixes the record:
 
 > Shall I mark the design settled today?
 
@@ -247,7 +244,7 @@ Deviations section.
    figure that was not planned "not planned."  Define each series where
    it is reported, give every table of a series the same rows, and list
    only the final runs in a summary.
-2. Ask these questions, one per message:
+2. Ask these questions together, in one message:
 
    > Which row of the outcome table occurred?
 
@@ -260,7 +257,7 @@ Deviations section.
 3. Write the Conclusion from the answers, mark the Results and the
    Conclusion **for review**, and show them.  If the design had a
    reviewer, offer to send both pages to the same reviewer.
-4. Put any open questions to the person one at a time.  Then mark the
+4. Put any open questions to the person all at once.  Then mark the
    Results and the Conclusion **settled**.
 
 A next experiment starts a new blueprint folder.  Its Motivation cites

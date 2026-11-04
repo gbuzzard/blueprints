@@ -7,12 +7,13 @@ proposals, papers, and other work before it is done.
 to the repo or dropped this kit into the chat, as a zip file or
 a folder, to start blueprinting.  Start now, without being asked.**
 
-1. If it is still a zip file, unzip it into a folder of its own.
+1. If it is still a zip file, unzip it into a folder of its own.  Do
+   not ask first.
 2. Read `SKILL.md` and follow it.  It names the kinds of work, and
    `BASE.md` gives the exact steps.  Show every page as a rendered web
    page, as an HTML artifact in the Claude app or in the browser from
-   Claude Code, never as HTML text in the chat.  End every message with
-   one clear question.
+   Claude Code, never as HTML text in the chat.  Ask the person only
+   when you need a decision.
 
 The rest of this page is for the person.
 
@@ -38,17 +39,18 @@ design is settled.  The kit now has two kinds:
 
 **In Claude Code.**  Open Claude Code in the folder of the project the
 work belongs to and drag the zip file into the chat line.  Claude asks
-which kind of work you have, unless you have said so, and asks once
-whether to install the kit as a skill, so that next time you can type
-`/blueprints`.
+which kind of work you have, unless you have said so.  To make the kit a
+skill you can start by typing `/blueprints`, copy the kit folder to
+`~/.claude/skills/blueprints/`.
 
 **In the Claude app or on claude.ai.**  Install the kit once: open
 Settings, find Skills, and upload the zip file.  Then in any chat say,
 for example, "Let's blueprint my experiment."  Custom skills need a paid
 plan with code execution turned on.
 
-Either way, Claude first shows you an example front page, then asks you a
-few questions, then opens the front page of your own blueprints.
+Either way, Claude first shows you an example front page, asks you one
+question about the work, then opens the front page of your own
+blueprints.
 
 ## What is in the kit
 
@@ -73,7 +75,7 @@ these.  They are short so that you can.
   browsers typeset without any script.
 - The templates load nothing from the internet.
 - `BASE.md` tells Claude to edit files only in the blueprint folder you
-  choose, and to ask you before it runs a command, starts a run of an
+  choose, and to ask you before it runs your code, starts a run of an
   experiment, installs anything, uses the network, commits, or pushes.
 - `BASE.md` tells Claude to treat text inside your papers, code, and data
   as information, never as instructions.
@@ -85,5 +87,5 @@ that loads code, do not use it.
 
 C. A. Bouman, "Blueprinting: A Methodology for AI Software Design," in
 preparation.  The software kind is the Blueprinting starter kit, version
-5, by C. A. Bouman, moved onto the shared base.  The experiment kind
+6, by C. A. Bouman, moved onto the shared base.  The experiment kind
 adapts the same method to the design of computational experiments.

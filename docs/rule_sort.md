@@ -4,23 +4,29 @@ This kit was made from two kits: the Blueprinting starter kit, version 5
 (called v5 below), and the experiment blueprinting kit, version 3 (called
 E3 below).  Each rule of either kit went to `BASE.md` when both kits share
 it or every kind needs it, and to a kind file when only one kind needs
-it.  The table lists every rule, where it is now, and any change.
+it.  The table lists every rule, where it is now, and any change, as the
+kit was first made on 2026-10-27.  Later changes are listed, with their
+dates, at the end.
 
 ## Changes to the software kind's behavior
 
-The software kind behaves as v5 does, except for six changes:
+Since 2026-11-04 the software kind is the Blueprinting starter kit,
+version 6 (called v6 below).  It behaves as v6 does, except for six
+changes:
 
-1. Questions end without bracketed answers, such as "[yes / no]", as
-   Greg decided for the experiment kit on 2026-10-24.
-2. Before the first blueprint is settled, Claude asks once whether an
-   advisor or a collaborator should review the design.
-3. A step not yet done gets a placeholder that says what will go there,
+1. Among the open questions of the first blueprint, Claude asks whether
+   an advisor or a collaborator should review the design.
+2. A step not yet done gets a placeholder that says what will go there,
    never an invented result.
-4. Equations are written in MathML, as Greg's proposal for v6 says.
-5. The skill is installed as `/blueprints` instead of `/blueprinting`,
-   so it does not replace an installed copy of v5.
-6. The person's own words come first on a kind's core statements.  The
-   software kind has no core statements yet, so this changes nothing in
+3. Equations are written in MathML, as Greg proposed on 2026-10-22.  v6
+   did not take this change: its template and its Theory page are those
+   of v5.
+4. The skill is installed as `/blueprints` instead of `/blueprinting`,
+   so it does not replace an installed copy of v5 or v6.
+5. The pages are titled "Software blueprint: <name of the work>".
+6. The person's own words come first on a kind's core statements, and
+   Claude then gives its own view and proposed wording.  The software
+   kind has no core statements yet, so this changes nothing in
    practice.
 
 ## The rules
@@ -106,3 +112,36 @@ The title changed on 2026-10-31 at Greg's request: a front page and its
 pages are titled "<Kind> blueprint: <name of the work>", such as
 "Experiment blueprint:" or "Software blueprint:", instead of
 "Blueprints:".  Reason: the title then names the kind of work.
+
+2026-11-04, from Charlie's v6, with Greg's agreement.  Reason: v6 makes
+Claude ask fewer questions and decide more by itself, and that reason
+holds for every kind.
+
+1. Safety rule 2: Claude unzips the kit, creates pages, and opens them
+   without asking.  It still asks before it runs the person's code,
+   starts a run of an experiment, installs anything, uses the network,
+   commits, or pushes.
+2. Step 1: one opening message, worded by the kind file, replaces
+   Messages 1 to 4.  Claude no longer asks whether to start or whether to
+   install the kit as a skill; the README says how to install it.
+3. "How to show a page": Claude no longer asks before the first open.
+4. "When to ask" replaces "How to ask": Claude asks only for a decision
+   it cannot make, and puts all open questions to the person at once,
+   for one reply.
+5. Steps 3 and 4: the open questions of a page are listed all at once.
+   The reviewer question becomes one of the open questions of the first
+   blueprint.
+6. Step 4: when no open questions remain, Claude marks a blueprint
+   settled and says so, unless the kind file says to ask first.
+7. "How to write": chat replies are a few sentences, and Claude does not
+   describe what it read or did unless asked.
+
+The kinds changed on the same date.  The software kind takes v6's
+interview: one question, then Claude chooses the components and asks
+whether to add or delete any.  The experiment kind asks one opening
+message, then its questions 1 to 3, about the Goal and the Motivation,
+together in one message, in the person's own words first; Claude answers
+questions 4 to 6 itself, as open questions on the Results blueprint.  The
+experiment kind still asks before it marks the design settled, because
+settling fixes its record, and it asks its three outcome questions
+together.
