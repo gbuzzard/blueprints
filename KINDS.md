@@ -75,7 +75,8 @@ many times and who answers the questions about it.
 7. Try the kind on a real piece of work, with its author as the person,
    before anyone else uses it.  A real case shows what the kind file
    lacks.
-8. Add the kind to the list in `SKILL.md` and to the list of kinds at the top of the human part of `README.md`.
+8. Add the kind to the list in `SKILL.md` and to the list of kinds at
+   the top of the human part of `README.md`.
 
 ## Rules for changing the kit
 
