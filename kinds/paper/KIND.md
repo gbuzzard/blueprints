@@ -97,6 +97,29 @@ answers, apply the tests, check for the three confusions, and give your
 view and proposed wording as `BASE.md` Step 3 says.  Ask again,
 reworded, only about a statement that fails its test.
 
+**Framing questions.**  In the next message, ask these five questions
+together, and give your own answer to each, marked as a proposal, so
+that the person responds to a proposal instead of starting from nothing:
+
+1. Is this result a special case of a more general one?  What would the
+   general statement be, and what would it cost to show it?
+2. Who outside this application has the same problem, and would the
+   method work for them?
+3. Which component could be removed while keeping most of the gain?
+4. Is there a simpler version of the problem, such as a linear,
+   one-dimensional, or noise-free case, that shows the main idea more
+   clearly?
+5. If a reader remembers one sentence from the paper, what should it
+   be?
+
+Questions 1 and 2 look for a broader framing, and questions 3 and 4 for
+a simpler one.  Ask about simplification explicitly, because people
+more often add to a design than remove from it.  Think broadly about the
+significance, but keep each claim as narrow as its results.  A broader
+framing goes into the Significance, or into "Not claimed" on the
+Contribution.  A simplification becomes an open question on the Methods
+or the Contribution.
+
 Draft the Prior work, Methods, Results, and Outline blueprints yourself,
 from what you read, each with its open questions.  On Methods, mark each
 component new or standard; when you cannot tell, make it an open
@@ -173,6 +196,7 @@ date to the front page.
 - Which claim is weakest, and would the paper be better without it?
 - Does the first sentence of the abstract say what is new?
 - Is there a shorter paper that makes the same contribution?
+- The five framing questions of section 4.
 
 ## 11. Outside rules
 
