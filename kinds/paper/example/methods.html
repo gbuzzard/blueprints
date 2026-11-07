@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper blueprint: QGGMRF prior versus TV prior (example), Methods</title>
+<style>
+:root {
+  --bg: #fbfaf7; --surface: #ffffff; --fg: #1f2328; --muted: #5f6670; --line: #d9d7d0;
+  --accent: #2b6cb0; --done: #2f855a; --todo: #b7791f;
+  --fill-a: #e3eefb; --fill-b: #dff4f7; --fill-c: #fdf3df;
+  --sans: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #15171b; --surface: #1d2025; --fg: #e6e4df; --muted: #a0a6ae; --line: #343a42;
+  --accent: #7fb0ea; --done: #7cc99a; --todo: #e2b05a;
+  --fill-a: #1b2d44; --fill-b: #0f3238; --fill-c: #3a2f17; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #15171b; --surface: #1d2025; --fg: #e6e4df; --muted: #a0a6ae; --line: #343a42;
+  --accent: #7fb0ea; --done: #7cc99a; --todo: #e2b05a;
+  --fill-a: #1b2d44; --fill-b: #0f3238; --fill-c: #3a2f17; color-scheme: dark }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 16px; line-height: 1.55; }
+.wrap { max-width: 900px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 64px; }
+.crumb { font-size: 13px; color: var(--muted); margin: 0 0 14px; }
+.crumb a { color: var(--accent); text-decoration: none; }
+h1 { font-size: 30px; font-weight: 700; margin: 0 0 4px; }
+h2 { font-size: 22px; font-weight: 700; margin: 40px 0 10px; }
+p { max-width: 70ch; margin: 0 0 10px; }
+.lead { color: var(--muted); font-size: 17px; }
+code { font-family: var(--mono); font-size: 0.9em; }
+ul, ol { max-width: 75ch; } li { margin: 4px 0; }
+pre, .eq { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 10px 14px; font-family: var(--mono); font-size: 14px; overflow-x: auto; margin: 10px 0; }
+.tablewrap { overflow-x: auto; }
+table { border-collapse: collapse; margin: 12px 0; font-size: 15px; }
+th, td { border-bottom: 1px solid var(--line); padding: 6px 14px 6px 0; text-align: left; vertical-align: top; }
+th { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+figure { margin: 14px 0; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 12px; overflow-x: auto; }
+figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; }
+svg text { font-family: var(--sans); fill: var(--fg); font-size: 14px; }
+svg .box-a { fill: var(--fill-a); stroke: var(--accent); }
+svg .box-b { fill: var(--fill-b); stroke: var(--muted); }
+svg .box-c { fill: var(--fill-c); stroke: var(--todo); }
+svg .arrow { stroke: var(--muted); fill: none; stroke-width: 1.5; }
+.chip { display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 1px 8px; border-radius: 3px; border: 1px solid; vertical-align: middle; }
+.chip.done { color: var(--done); border-color: var(--done); }
+.chip.todo { color: var(--todo); border-color: var(--todo); }
+.ask { border-left: 4px solid var(--todo); background: var(--surface); padding: 10px 16px; max-width: 75ch; margin: 16px 0; }
+ol.questions { list-style: none; padding-left: 0; }
+ol.questions li { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start; padding: 8px 0; border-bottom: 1px solid var(--line); }
+ol.questions input { width: 18px; height: 18px; margin-top: 4px; accent-color: var(--done); }
+ol.questions li.decided { color: var(--muted); }
+math { font-family: "STIX Two Math", "Latin Modern Math", "Cambria Math", math; font-size: 1.05em; }
+.eq math { font-size: 18px; }
+mtd { padding: 0.25em 0.3em; }
+mtd.l { text-align: left; }
+mtd.r { text-align: right; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<p class="crumb"><a href="index.html">Paper blueprint: QGGMRF prior versus TV prior (example)</a> &rsaquo; Methods</p>
+<h1>4. Methods</h1>
+<p class="lead">What the report did, and which components are new. A made-up example.</p>
+
+<h2>1. Components</h2>
+<div class="tablewrap"><table>
+<tr><th>Component</th><th>New or standard</th><th>Source</th></tr>
+<tr><td>MBIR with a weighted least-squares data term</td><td>Standard</td><td>Thibault, Sauer, Bouman, and Hsieh, <i>Medical Physics</i> 34(11), 2007</td></tr>
+<tr><td>QGGMRF prior</td><td>Standard</td><td>The same paper</td></tr>
+<tr><td>TV prior, in the anisotropic form below</td><td>Standard</td><td>Rudin, Osher, and Fatemi, <i>Physica D</i> 60, 1992</td></tr>
+<tr><td>The same solver and stopping rule for both priors</td><td>Standard</td><td>Open question Q2</td></tr>
+<tr><td>Each prior's weight set by matching the edge width at the muscle insert</td><td>Standard</td><td>Common practice; this report chooses the insert</td></tr>
+</table></div>
+<p>No component is new. The contribution is the measured comparison, so the Contribution blueprint states measured differences, not a method.</p>
+<p>Both priors have the same form. For an image <math><mi>x</mi></math>, the prior sums a potential <math><mi>&#961;</mi></math> of the difference between each pair of neighboring pixels <math><mi>s</mi></math> and <math><mi>r</mi></math> in the set of neighbor pairs <math><mi mathvariant="script">C</mi></math>, with weights <math><msub><mi>b</mi><mrow><mi>s</mi><mi>r</mi></mrow></msub></math>:</p>
+<div class="eq"><math display="block"><mi>h</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><munder><mo>&#8721;</mo><mrow><mo stretchy="false">{</mo><mi>s</mi><mo>,</mo><mi>r</mi><mo stretchy="false">}</mo><mo>&#8712;</mo><mi mathvariant="script">C</mi></mrow></munder><msub><mi>b</mi><mrow><mi>s</mi><mi>r</mi></mrow></msub><mspace width="0.17em"/><mi>&#961;</mi><mo stretchy="false">(</mo><msub><mi>x</mi><mi>s</mi></msub><mo>&#8722;</mo><msub><mi>x</mi><mi>r</mi></msub><mo stretchy="false">)</mo></math></div>
+<p>The two priors differ only in <math><mi>&#961;</mi></math>. The scale <math><mi>&#963;</mi></math> sets each prior's weight; <math><mi>p</mi></math>, <math><mi>q</mi></math>, and <math><mi>T</mi></math> are the QGGMRF shape parameters, held at the lab's default values:</p>
+<div class="eq"><math display="block"><mtable columnalign="right left" displaystyle="true">
+<mtr><mtd class="r"><msub><mi>&#961;</mi><mtext>QGGMRF</mtext></msub><mo stretchy="false">(</mo><mi>&#916;</mi><mo stretchy="false">)</mo></mtd><mtd class="l"><mo>=</mo><mfrac><msup><mrow><mo>|</mo><mi>&#916;</mi><mo>|</mo></mrow><mi>p</mi></msup><mrow><mi>p</mi><msup><mi>&#963;</mi><mi>p</mi></msup></mrow></mfrac><mspace width="0.17em"/><mfrac><msup><mrow><mo>|</mo><mi>&#916;</mi><mo>/</mo><mo stretchy="false">(</mo><mi>T</mi><mi>&#963;</mi><mo stretchy="false">)</mo><mo>|</mo></mrow><mrow><mi>q</mi><mo>&#8722;</mo><mi>p</mi></mrow></msup><mrow><mn>1</mn><mo>+</mo><msup><mrow><mo>|</mo><mi>&#916;</mi><mo>/</mo><mo stretchy="false">(</mo><mi>T</mi><mi>&#963;</mi><mo stretchy="false">)</mo><mo>|</mo></mrow><mrow><mi>q</mi><mo>&#8722;</mo><mi>p</mi></mrow></msup></mrow></mfrac></mtd></mtr>
+<mtr><mtd class="r"><msub><mi>&#961;</mi><mtext>TV</mtext></msub><mo stretchy="false">(</mo><mi>&#916;</mi><mo stretchy="false">)</mo></mtd><mtd class="l"><mo>=</mo><mfrac><mrow><mo>|</mo><mi>&#916;</mi><mo>|</mo></mrow><mi>&#963;</mi></mfrac></mtd></mtr>
+</mtable></math></div>
+
+<h2>2. Data and experiments</h2>
+<p>Two scans each of the Gammex MMC phantom, whose inserts have known CT numbers, and of the Lungman chest phantom, whose lungs have a vessel tree closer to patient texture, all at one dose. The scores are the noise in uniform regions, from the difference of the two scans; the 10% to 90% edge width at the inserts; and the mean frequency of the noise power spectrum.</p>
+<p class="ask">PLACEHOLDER: the runs are designed as a separate set of experiment blueprints, linked here once that set exists. This page names only what a reader needs to judge the results.</p>
+
+<h2>3. Fair comparison</h2>
+<p>Each prior's scale <math><mi>&#963;</mi></math> is chosen so that the edge width at the muscle insert is the same for both priors, on a third Gammex scan that is not scored. One scale per prior is used for both phantoms.</p>
+
+<h2>4. Open questions</h2>
+<ol class="questions">
+  <li><input type="checkbox" id="q2"><label for="q2"><b>Q2. Solver.</b> Which solver should the report cite? Recommendation: the solver that the lab's reconstruction code uses, with the paper that describes it.</label></li>
+  <li><input type="checkbox" id="q3"><label for="q3"><b>Q3. Form of TV.</b> Is the anisotropic form right? Recommendation: yes, if the lab's code uses it, and the report should say so, because the isotropic form treats diagonal edges differently.</label></li>
+</ol>
+
+<h2>5. Decisions</h2>
+<ol class="questions">
+  <li class="decided"><input type="checkbox" checked disabled><label><span class="chip done">decided 2026-11-07</span> <b>Q1. Matching edge.</b> The weights are matched at the edge of the muscle insert, because TV widens low-contrast edges the most. Matching at an iodine insert was rejected.</label></li>
+</ol>
+</div>
+</body>
+</html>

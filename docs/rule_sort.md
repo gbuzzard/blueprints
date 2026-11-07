@@ -145,3 +145,7 @@ questions 4 to 6 itself, as open questions on the Results blueprint.  The
 experiment kind still asks before it marks the design settled, because
 settling fixes its record, and it asks its three outcome questions
 together.
+
+2026-11-07: the paper kind was added, with Greg as its owner, following
+"Adding a kind" in `KINDS.md`.  It needed no change to `BASE.md`.  Its
+confusions come from two abstracts that Greg reviewed.

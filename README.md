@@ -19,7 +19,7 @@ The rest of this page is for the person.
 
 ## The kinds of work
 
-The kit has two kinds of blueprints:
+The kit has three kinds of blueprints:
 
 - **Software.**  The design of a software project, written before any
   code.  Its blueprints are Theory, Software Architecture, Hardware
@@ -28,6 +28,10 @@ The kit has two kinds of blueprints:
 - **Experiment.**  The design of a computational experiment, written
   before any run.  Its blueprints are Goal, Motivation, Plan, Results,
   and Conclusion.  The last two record what was measured and learned.
+- **Paper.**  The design of a research paper, written before the
+  manuscript.  Its blueprints are Contribution, Significance, Prior
+  work, Methods, Results, and Outline.  Read in order, their statements
+  give the abstract.
 
 ## What the kit does
 
@@ -69,6 +73,7 @@ blueprints.
 | `KINDS.md` | How a kind is defined, how to add one, and the rules for changing the kit. |
 | `kinds/software/` | The software kind: `KIND.md`, a front page template, and an example (a made-up image denoiser). |
 | `kinds/experiment/` | The experiment kind: `KIND.md`, its templates, and an example (a made-up comparison of two CT denoisers). |
+| `kinds/paper/` | The paper kind: `KIND.md`, a front page template, and an example (a made-up report comparing two CT priors). |
 | `templates/` | The templates every kind uses unless it has its own: front page, blueprint page, `decisions.md`, and `CLAUDE.md`, the coding and comment style Claude follows if the work needs code. |
 | `docs/rule_sort.md` | Where each rule of the two earlier kits went in this kit, and each later change to `BASE.md`. |
 

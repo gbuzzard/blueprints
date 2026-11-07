@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper blueprint: QGGMRF prior versus TV prior (example), Contribution</title>
+<style>
+:root {
+  --bg: #fbfaf7; --surface: #ffffff; --fg: #1f2328; --muted: #5f6670; --line: #d9d7d0;
+  --accent: #2b6cb0; --done: #2f855a; --todo: #b7791f;
+  --fill-a: #e3eefb; --fill-b: #dff4f7; --fill-c: #fdf3df;
+  --sans: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #15171b; --surface: #1d2025; --fg: #e6e4df; --muted: #a0a6ae; --line: #343a42;
+  --accent: #7fb0ea; --done: #7cc99a; --todo: #e2b05a;
+  --fill-a: #1b2d44; --fill-b: #0f3238; --fill-c: #3a2f17; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #15171b; --surface: #1d2025; --fg: #e6e4df; --muted: #a0a6ae; --line: #343a42;
+  --accent: #7fb0ea; --done: #7cc99a; --todo: #e2b05a;
+  --fill-a: #1b2d44; --fill-b: #0f3238; --fill-c: #3a2f17; color-scheme: dark }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 16px; line-height: 1.55; }
+.wrap { max-width: 900px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 64px; }
+.crumb { font-size: 13px; color: var(--muted); margin: 0 0 14px; }
+.crumb a { color: var(--accent); text-decoration: none; }
+h1 { font-size: 30px; font-weight: 700; margin: 0 0 4px; }
+h2 { font-size: 22px; font-weight: 700; margin: 40px 0 10px; }
+p { max-width: 70ch; margin: 0 0 10px; }
+.lead { color: var(--muted); font-size: 17px; }
+code { font-family: var(--mono); font-size: 0.9em; }
+ul, ol { max-width: 75ch; } li { margin: 4px 0; }
+pre, .eq { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 10px 14px; font-family: var(--mono); font-size: 14px; overflow-x: auto; margin: 10px 0; }
+.tablewrap { overflow-x: auto; }
+table { border-collapse: collapse; margin: 12px 0; font-size: 15px; }
+th, td { border-bottom: 1px solid var(--line); padding: 6px 14px 6px 0; text-align: left; vertical-align: top; }
+th { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+figure { margin: 14px 0; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 12px; overflow-x: auto; }
+figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; }
+svg text { font-family: var(--sans); fill: var(--fg); font-size: 14px; }
+svg .box-a { fill: var(--fill-a); stroke: var(--accent); }
+svg .box-b { fill: var(--fill-b); stroke: var(--muted); }
+svg .box-c { fill: var(--fill-c); stroke: var(--todo); }
+svg .arrow { stroke: var(--muted); fill: none; stroke-width: 1.5; }
+.chip { display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 1px 8px; border-radius: 3px; border: 1px solid; vertical-align: middle; }
+.chip.done { color: var(--done); border-color: var(--done); }
+.chip.todo { color: var(--todo); border-color: var(--todo); }
+.ask { border-left: 4px solid var(--todo); background: var(--surface); padding: 10px 16px; max-width: 75ch; margin: 16px 0; }
+ol.questions { list-style: none; padding-left: 0; }
+ol.questions li { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start; padding: 8px 0; border-bottom: 1px solid var(--line); }
+ol.questions input { width: 18px; height: 18px; margin-top: 4px; accent-color: var(--done); }
+ol.questions li.decided { color: var(--muted); }
+math { font-family: "STIX Two Math", "Latin Modern Math", "Cambria Math", math; font-size: 1.05em; }
+.eq math { font-size: 18px; }
+mtd { padding: 0.25em 0.3em; }
+mtd.l { text-align: left; }
+mtd.r { text-align: right; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<p class="crumb"><a href="index.html">Paper blueprint: QGGMRF prior versus TV prior (example)</a> &rsaquo; Contribution</p>
+<h1>1. Contribution</h1>
+<p class="lead">What the report shows that was not known before. A made-up example: the results are pending, so both claims are expected claims.</p>
+
+<h2>1. Claims</h2>
+<ol>
+  <li><span class="chip todo">expected</span> On the Gammex MMC phantom, with each prior's weight set so that the edge of the muscle insert has the same 10% to 90% width, TV gives lower noise than QGGMRF in the uniform background. Supported by: Results, figure 1.</li>
+  <li><span class="chip todo">expected</span> On the Lungman chest phantom, at the same weights, TV's noise is lower than QGGMRF's by a smaller percentage than on the Gammex phantom, and TV shows flat patches with sharp borders that QGGMRF does not. Supported by: Results, figures 2 and 3.</li>
+</ol>
+<p class="ask">PLACEHOLDER: the amount by which TV's noise is lower on each phantom, as a percentage of QGGMRF's, goes into each claim when the Results have it. If a result does not support its claim, the claim is revised or dropped, and the Contribution, the Significance, and the Prior work are settled again.</p>
+
+<h2>2. Not claimed</h2>
+<ul>
+  <li>That either prior is better for diagnosis. The report has no reader study.</li>
+  <li>That the results hold for other priors, other phantoms, or other doses.</li>
+  <li>That any component of the method is new (see Methods).</li>
+</ul>
+
+<h2>3. Open questions</h2>
+<ol class="questions">
+  <li><input type="checkbox" id="q2"><label for="q2"><b>Q2. One claim or two.</b> Claim 2 has two parts: a smaller noise gap and the flat patches. Should it be split? Recommendation: keep one claim, because both parts come from the same property: TV favors constant regions, and the Lungman phantom has few of them.</label></li>
+  <li><input type="checkbox" id="q3"><label for="q3"><b>Q3. No difference.</b> If the Lungman results show no difference in noise, should claim 2 say so? Recommendation: yes. A reader who chooses a prior needs that result as much as a difference.</label></li>
+</ol>
+
+<h2>4. Decisions</h2>
+<ol class="questions">
+  <li class="decided"><input type="checkbox" checked disabled><label><span class="chip done">decided 2026-11-07</span> <b>Q1. A comparison, not a method.</b> The report claims a measured comparison, because the Methods blueprint marks every component standard. A claim of a new protocol for matching the edge width was rejected, because matching resolution before comparing noise is standard practice.</label></li>
+</ol>
+</div>
+</body>
+</html>

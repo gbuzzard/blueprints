@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper blueprint: QGGMRF prior versus TV prior (example)</title>
+<style>
+:root {
+  --bg: #fbfaf7; --surface: #ffffff; --fg: #1f2328; --muted: #5f6670; --line: #d9d7d0;
+  --accent: #2b6cb0; --done: #2f855a; --todo: #b7791f; --draft: #2b6cb0;
+  --sans: -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #15171b; --surface: #1d2025; --fg: #e6e4df; --muted: #a0a6ae; --line: #343a42;
+  --accent: #7fb0ea; --done: #7cc99a; --todo: #e2b05a; --draft: #7fb0ea; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #15171b; --surface: #1d2025; --fg: #e6e4df; --muted: #a0a6ae; --line: #343a42;
+  --accent: #7fb0ea; --done: #7cc99a; --todo: #e2b05a; --draft: #7fb0ea; color-scheme: dark }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 16px; line-height: 1.55; }
+.wrap { max-width: 820px; margin: 0 auto; padding-inline: 16px; padding-block: 36px 64px; }
+h1 { font-size: 32px; font-weight: 700; margin: 0 0 6px; }
+h2 { font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin: 28px 0 8px; }
+p { max-width: 70ch; margin: 0 0 10px; }
+.lead { color: var(--muted); font-size: 17px; }
+code { font-family: var(--mono); font-size: 0.9em; }
+a { color: var(--accent); }
+.list { display: grid; gap: 12px; margin: 10px 0; }
+.item { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 14px 18px; display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; align-items: start; }
+.item h3 { margin: 0; font-size: 18px; }
+.item h3 a { text-decoration: none; }
+.item h3 a:hover { text-decoration: underline; }
+.item p { margin: 0; grid-column: 1; font-size: 15px; }
+.item.optional { border-style: dashed; }
+.status { font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 3px; border: 1px solid; white-space: nowrap; }
+.status.done { color: var(--done); border-color: var(--done); }
+.status.todo { color: var(--todo); border-color: var(--todo); }
+.status.draft { color: var(--draft); border-color: var(--draft); }
+.status.none { color: var(--muted); border-color: var(--line); }
+.foot { font-size: 14px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Paper blueprint: QGGMRF prior versus TV prior (example)</h1>
+<p class="lead">An internal report for a lab that reconstructs CT images by model-based iterative reconstruction (MBIR). This made-up example shows a front page while the argument is under review and the results are pending. One blueprint per card. Start at the top and read down.</p>
+<p class="foot">Not yet submitted. Not yet settled: the results are pending, so the claims are expected claims. Reviewer: none.</p>
+
+<h2>The argument</h2>
+<div class="list">
+  <div class="item">
+    <h3><a href="contribution.html">1. Contribution</a></h3>
+    <span class="status todo">for review</span>
+    <p>Two expected claims, each waiting for its result. At equal edge width, TV gives lower noise than QGGMRF on the Gammex MMC phantom. On the Lungman chest phantom the gap is smaller, and TV shows flat patches that QGGMRF does not.</p>
+  </div>
+  <div class="item">
+    <h3>2. Significance</h3>
+    <span class="status draft">drafting</span>
+    <p>A reader who chooses a prior for CT reconstruction learns whether TV's advantage on a phantom of constant regions holds on texture closer to patients, and so whether a test on such a phantom is enough to choose between the two priors.</p>
+  </div>
+  <div class="item">
+    <h3>3. Prior work</h3>
+    <span class="status draft">drafting</span>
+    <p>QGGMRF (Thibault, Sauer, Bouman, and Hsieh, 2007) and TV (Rudin, Osher, and Fatemi, 1992) are both established priors. Which published comparisons of the two are closest is an open question.</p>
+  </div>
+</div>
+
+<h2>The support</h2>
+<div class="list">
+  <div class="item">
+    <h3><a href="methods.html">4. Methods</a></h3>
+    <span class="status todo">for review</span>
+    <p>No component is new. Both priors run in the same MBIR reconstruction, with each prior's weight set so that the edge of the muscle insert has the same width.</p>
+  </div>
+  <div class="item">
+    <h3>5. Results</h3>
+    <span class="status draft">drafting</span>
+    <p>Planned: noise against edge width for both priors on each phantom, and the noise power spectra on the Lungman phantom. The numbers will come from the experiment blueprints that measure this comparison.</p>
+  </div>
+  <div class="item">
+    <h3>6. Outline</h3>
+    <span class="status none">not started</span>
+    <p>Not started.</p>
+  </div>
+</div>
+
+<p class="foot">Decisions and rejected alternatives are recorded, with dates, in <code>decisions.md</code>.</p>
+</div>
+</body>
+</html>

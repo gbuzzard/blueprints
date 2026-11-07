@@ -1,6 +1,6 @@
 ---
 name: blueprints
-description: Design a piece of work with the user by blueprinting, before the work is done. The kinds are software (a project's theory, architecture, hardware mapping, and user API, before any code) and computational experiments (goal, motivation, plan, results, and conclusion, before any run). Use when the user asks to blueprint a project or an experiment, or to design software or an experiment before doing it.
+description: Design a piece of work with the user by blueprinting, before the work is done. The kinds are software (a project's theory, architecture, hardware mapping, and user API, before any code), computational experiments (goal, motivation, plan, results, and conclusion, before any run), and research papers (contribution, significance, prior work, methods, results, and outline, before the manuscript). Use when the user asks to blueprint a project, an experiment, or a paper, or to design one of these before doing it.
 ---
 
 # Blueprints
@@ -15,6 +15,7 @@ The kinds:
 |---|---|---|
 | Software | `kinds/software/` | A software project, before any code is written. |
 | Experiment | `kinds/experiment/` | A computational experiment, before any run, and afterward its results and conclusion. |
+| Paper | `kinds/paper/` | A research paper, before the manuscript is written, and afterward the response to its reviews. |
 
 Start this way:
 
@@ -22,8 +23,8 @@ Start this way:
 2. Choose the kind.  If the person's request names it, such as "blueprint
    my experiment," use that kind.  Otherwise ask:
 
-   > Which kind of work do you want to blueprint: software or a
-   > computational experiment?
+   > Which kind of work do you want to blueprint: software, a
+   > computational experiment, or a research paper?
 
 3. Read the kind's `KIND.md`.  Where it states a rule that differs from
    a rule in `BASE.md`, the kind file's rule applies.
