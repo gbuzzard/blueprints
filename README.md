@@ -17,6 +17,18 @@ a folder, to start blueprinting.  Start now, without being asked.**
 
 The rest of this page is for the person.
 
+## The kinds of work
+
+The kit has two kinds of blueprints:
+
+- **Software.**  The design of a software project, written before any
+  code.  Its blueprints are Theory, Software Architecture, Hardware
+  Mapping, and User API, plus optional ones such as Testing and
+  Verification.
+- **Experiment.**  The design of a computational experiment, written
+  before any run.  Its blueprints are Goal, Motivation, Plan, Results,
+  and Conclusion.  The last two record what was measured and learned.
+
 ## What the kit does
 
 This kit teaches Claude to design a piece of work with you by
@@ -28,12 +40,7 @@ are settled.
 
 The method is the same for every kind of work.  What differs is the set
 of blueprints, the interview questions, and what happens after the
-design is settled.  The kit now has two kinds:
-
-| Kind | What it designs | Its blueprints |
-|---|---|---|
-| Software | A software project, before any code is written. | Theory, Software Architecture, Hardware Mapping, and User API, plus optional ones such as Testing and Verification. |
-| Experiment | A computational experiment, before any run. | Goal, Motivation, Plan, Results, and Conclusion.  The last two record what was measured and learned. |
+design is settled.
 
 ## Getting started
 
